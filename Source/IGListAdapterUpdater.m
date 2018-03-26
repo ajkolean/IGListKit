@@ -563,6 +563,7 @@ static NSUInteger IGListIdentifierHash(const void *item, NSUInteger (*size)(cons
     [collectionView performBatchUpdates:^{
         [collectionView reloadSections:visibleSections];
     } completion:^(BOOL finished) {
+        [delegate listAdapterUpdater:self didReloadSections:visibleSections collectionView:collectionView];
         [CATransaction commit];
     }];
 }

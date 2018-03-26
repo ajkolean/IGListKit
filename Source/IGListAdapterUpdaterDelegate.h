@@ -110,6 +110,19 @@ NS_SWIFT_NAME(ListAdapterUpdaterDelegate)
             collectionView:(UICollectionView *)collectionView;
 
 /**
+ Notifies the delegate that the updater successfully called `-[UICollectionView reloadSections:]`.
+
+ @param listAdapterUpdater The adapter updater owning the transition.
+ @param sections The sections that reloaded
+ @param collectionView The collection view that reloaded.
+
+ @note This event is only sent when outside of `-[UICollectionView performBatchUpdates:completion:]`.
+ */
+- (void)listAdapterUpdater:(IGListAdapterUpdater *)listAdapterUpdater
+         didReloadSections:(NSIndexSet *)sections
+            collectionView:(UICollectionView *)collectionView;
+
+/**
  Notifies the delegate that the updater will call `-[UICollectionView reloadData]`.
 
  @param listAdapterUpdater The adapter updater owning the transition.
